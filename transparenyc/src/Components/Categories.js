@@ -12,33 +12,40 @@ class Categories extends React.Component {
     }
   }
 
-  componentDidRecieveProps() {
-    let { organizations } = this.state;
-    let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
-     axios.get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
-     .then(response => {
-       console.log(response.data)
-       response.data.forEach(agency => { organizations.push(agency.award_lead_city_agency) });
-       this.setState({
-         organizations: organizations
-       })
-     })
-  }
+  // componentDidReceiveProps() {
+  //   console.log("Im in cwrp1!!")
+  
+  //   let { organizations } = this.state;
+  //   let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
+  //    axios.get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
+  //    .then(response => {
+  //      console.log(response.data)
+  //      let emptyArr = [];
+  //      response.data.forEach(agency => { emptyArr.push(agency.award_lead_city_agency) });
+  //      this.setState({
+  //        organizations: emptyArr
+  //      })
+  //    })
+  // }
   
   componentWillReceiveProps() {
+  console.log("Im in cwrp2!!")
+  
     let { organizations } = this.state;
     let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
      axios.get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
      .then(response => {
        console.log(response.data)
-       response.data.forEach(agency => { organizations.push(agency.award_lead_city_agency) });
+       let emptyArr2 = [];
+       response.data.forEach(agency => { emptyArr2.push(agency.award_lead_city_agency) });
        this.setState({
-         organizations: organizations
+         organizations: emptyArr2
        })
-     })
+     }) 
   }
 
   render(){
+    console.log("StATTEEEE:", this.state)
     const { organizations } = this.state
     return(
       <div>
