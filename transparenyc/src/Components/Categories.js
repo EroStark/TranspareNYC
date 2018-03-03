@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import ProjectList from './ProjectList'
 
-class Categories extends React.Component{
+class Categories extends React.Component {
   constructor(props){
     super(props)
 
@@ -26,15 +26,16 @@ class Categories extends React.Component{
 
   render(){
     const { agency, organizations } = this.state
+    console.log(this.props);
     return(
       <div>
-      <h1>{agency}</h1>
+      <h1>{this.props.match.params.category}</h1>
       {organizations.map(org =>(
         <ProjectList name={org.award_lead_city_agency}/>
       ))}
       </div>
     )
   }
+}
 
-
-export default Categories
+export default Categories;

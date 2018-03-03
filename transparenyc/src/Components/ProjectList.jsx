@@ -32,11 +32,13 @@ class ProjectList extends React.Component{
     return(
       <div>
         <h1>{name}</h1>
-        {projects.map(project =>(
-          <p>project.project_name</p>
-          <p>project.payment_value</p>
-          <p>project.funding_source</p>
-        ))}
+        {projects.map(project => 
+          <div>
+            <p>project.project_name</p>
+            <p>project.payment_value</p>
+            <p>project.funding_source</p>
+          </div>
+        )}
       </div>
     )
   }
