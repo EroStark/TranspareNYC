@@ -38,13 +38,15 @@ class App extends React.Component {
       <div className="App">
         <nav id="NavBar">
           {agencies.map((elem) => 
-            <Link to={`/category/${elem}`}>
+            <Link to={`/${elem}`}>
               {elem}
             </Link>
           )}
         </nav>
+
         {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
-        <Route path='/category/:category' component={Categories}/>
+
+        <Route path='/:category' component={Categories}/>
 
       </div>
     );
