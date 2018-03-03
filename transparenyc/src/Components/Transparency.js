@@ -10,7 +10,8 @@ class Transparency extends React.Component {
             agencies: []
         }
     }
-    renderSomething =()=>{
+    renderSomething = () => {
+        console.log("got here")
         return(
             <div>Hey</div>
         )
@@ -42,7 +43,7 @@ class Transparency extends React.Component {
             <div className="App">
                 {agencies.map((elem) => {
                     return <div className="link">
-                        <Link to={`/category/${elem}`}>
+                        <Link to={`/${elem}`}>
                             {elem}
                         </Link>
                         <div>$10,000,000</div>
@@ -50,7 +51,7 @@ class Transparency extends React.Component {
                 })}
 
                 {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
-                <Route path='/category' component={this.renderSomething}/>
+                <Route path='/:category' component={this.renderSomething}/>
                 {/* <Route path='/doe' render={this.renderDoeInfo}/> */}
             </div>
         );

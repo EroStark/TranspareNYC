@@ -9,6 +9,11 @@ display: flex;
 justify-content: center
 }
 
+.App a {
+  display: flex;
+  justify-content: space-between;
+}
+
 .link{
 
 
