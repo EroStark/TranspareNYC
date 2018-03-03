@@ -15,6 +15,8 @@ class Transparency extends React.Component {
             <div>Hey</div>
         )
     }
+
+
     componentDidMount() {
         axios
             .get('https://data.cityofnewyork.us/resource/9haj-uwpr.json?$select=funding_category&$' +

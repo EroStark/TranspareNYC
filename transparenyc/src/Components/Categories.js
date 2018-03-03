@@ -35,6 +35,6 @@ class Categories extends React.Component{
       </div>
     )
   }
-
+}
 
 export default Categories
