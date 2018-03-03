@@ -3,38 +3,55 @@ import axios from 'axios'
 
 import ProjectList from './ProjectList'
 
-class Categories extends React.Component{
+class Categories extends React.Component {
   constructor(props){
     super(props)
 
     this.state = {
-      // agency: this.props.routeParams.agency,
-      agency: 'Education',
       organizations: []
     }
   }
 
-  componentDidMount(){
-     let path = //will be axios query
-     axios.get(path)
-     .then(response =>{
+  componentDidRecieveProps() {
+    let { organizations } = this.state;
+    let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
+     axios.get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
+     .then(response => {
+       console.log(response.data)
+       response.data.forEach(agency => { organizations.push(agency.award_lead_city_agency) });
        this.setState({
-         organizations: response.data
+         organizations: organizations
+       })
+     })
+  }
+  
+  componentWillReceiveProps() {
+    let { organizations } = this.state;
+    let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
+     axios.get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
+     .then(response => {
+       console.log(response.data)
+       response.data.forEach(agency => { organizations.push(agency.award_lead_city_agency) });
+       this.setState({
+         organizations: organizations
        })
      })
   }
 
   render(){
-    const { agency, organizations } = this.state
+    const { organizations } = this.state
     return(
       <div>
-      <h1>{agency}</h1>
+      <h1>{this.props.match.params.category}</h1>
       {organizations.map(org =>(
-        <ProjectList name={org.award_lead_city_agency}/>
+        <p>
+          {org}
+        </p>
+        // <ProjectList name={org.award_lead_city_agency}/>
       ))}
       </div>
     )
   }
 }
 
-export default Categories
+export default Categories;

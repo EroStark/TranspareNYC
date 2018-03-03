@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link, Switch} from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Categories from './Components/Categories';
 import axios from 'axios';
 import './App.css';
@@ -11,12 +11,7 @@ class App extends React.Component {
       agencies: []
     }
   }
-  renderSomething = () => {
-    console.log("got here")
-    return (
-      <div>Hey</div>
-    )
-  }
+  
   componentDidMount() {
     axios
       .get('https://data.cityofnewyork.us/resource/9haj-uwpr.json?$select=funding_category&$' +
@@ -27,10 +22,10 @@ class App extends React.Component {
         response
           .data
           .forEach(elem => {
-            return agenciesArr.push(elem.funding_category)
+            return agenciesArr.push(elem.funding_category);
           })
         console.log("agencies Arr", agenciesArr)
-        this.setState({agencies: agenciesArr})
+        this.setState({agencies: agenciesArr});
       })
       .catch(function (error) {
         console.log(error);
@@ -38,8 +33,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("state:", this.state)
-    const {agencies} = this.state
+    const {agencies} = this.state;
     return (
       <div className="App">
         <div className="Header">
@@ -50,14 +44,16 @@ class App extends React.Component {
               <Link to={`/category/:${elem}`}>
                 {elem}
               </Link>
-              <div>$10,000,000</div>
             </div>
           
         })}
         {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
-        <Route path='/category/:category' component={Categories}/> {/* <Route path='/doe' render={this.renderDoeInfo}/> */}
+
+        <Route path='/category/:category' component={Categories}/>
+
       </div>
     );
   }
 }
+
 export default App;
