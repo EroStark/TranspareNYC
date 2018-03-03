@@ -12,17 +12,17 @@ class Categories extends React.Component {
     }
   }
 
-  componentDidRecieveProps() {
+  componentDidMount() {
     let { organizations } = this.state;
     let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
      axios.get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
      .then(response => {
        console.log(response.data)
        response.data.forEach(agency => { organizations.push(agency.award_lead_city_agency) });
-       this.setState({
-         organizations: organizations
-       })
-     })
+      })
+         this.setState({
+           organizations: organizations
+         })
   }
   
   componentWillReceiveProps() {
@@ -35,7 +35,7 @@ class Categories extends React.Component {
        this.setState({
          organizations: organizations
        })
-     })
+      })
   }
 
   render(){
