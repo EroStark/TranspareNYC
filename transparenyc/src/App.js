@@ -71,7 +71,7 @@ class App extends React.Component {
         <nav id="navBar">
           {categories.map((elem, index) => (
             <span key={index} className="NavLinks">
-              <Link to={`/category/${elem}`}>{elem}</Link>
+              <Link to={`/category/${elem}`}>{elem.replace("*", "")}</Link>
             </span>
           ))}
         </nav>
