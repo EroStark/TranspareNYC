@@ -13,6 +13,7 @@ class App extends React.Component {
   }
   
   componentDidMount() {
+    console.log('MOUNTED')
     axios
       .get('https://data.cityofnewyork.us/resource/9haj-uwpr.json?$select=funding_category&$' +
         'group=funding_category')
