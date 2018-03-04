@@ -4,9 +4,8 @@
 
 #navBar {
   display: flex;
-  width: 700px;
+  width: 900px;
   margin: 0 auto;
-  justify-content: space-around;
 }
 
 #navBar a {
@@ -33,11 +32,49 @@
 
 a{
   position: relative;
-  color: black;
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 12px;
   margin: 0 5px;
+}
+
+.NavLinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#cc0000;
+  border:1px solid white;
+  border-radius:5px;
+  color:#fff;
+  width:300px;
+  margin: 2px;
+ }
+
+.NavLinks:active{
+  background-color:rgba(221, 144, 81, 0.99);
+  height: -5px;
+  margin-top: -5px;
+  margin-left: -1px;
+}
+.NavLink:focus{
+  background-color:rgba(221, 144, 81, 0.99);
+}
+.NavLinks:hover{
+  background-color:rgba(221, 144, 81, 0.99);
+}
+
+.project-container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+#project {
+  background-color: darkblue;
+  text-align: left;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 
