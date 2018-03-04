@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 #navBar {
@@ -10,7 +11,7 @@
 
 #navBar a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 14px;
 }
 
@@ -51,6 +52,7 @@ a{
   margin: 2px;
  }
 
+
 .NavLinks:active{
   background-color:rgba(221, 144, 81, 0.99);
   height: -5px;
@@ -76,6 +78,8 @@ a{
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
-
+.blurb-team-contacts a {
+color: black;
+}
 
 
