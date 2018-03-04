@@ -18,7 +18,7 @@
   width: 900px;
   margin: 0 auto;
   padding-top: 5em;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -57,7 +57,6 @@
 }
 
 a {
-  position: relative;
   color: black;
   text-transform: uppercase;
   text-decoration: none;
@@ -65,12 +64,9 @@ a {
   margin: 0 5px;
 }
 
-.NavLinks {
+#NavLinks {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 300px;
-  margin: 2px;
 }
 
 
@@ -82,10 +78,6 @@ a {
 }
 
 .NavLink:focus {
-  background-color:rgba(221, 144, 81, 0.99);
-}
-
-.NavLinks:hover {
   background-color:rgba(221, 144, 81, 0.99);
 }
 
@@ -102,9 +94,12 @@ a {
   margin-bottom: 0.5em;
 }
 .blurb-team-contacts a {
-  color: black;
+  color: white;
 }
 
+.home-contact a {
+  color: whitesmoke;
+}
 /* search bar */
 
 .container-1{
@@ -167,3 +162,20 @@ a {
   background: #8F939C;
 }
 
+.official-info a {
+  color: whitesmoke;
+}
+
+.home-contact {
+  display: inline-flex;
+  border: solid whitesmoke 1px;
+}
+
+.official-info {
+  border: solid whitesmoke 1px;
+}
+
+.officials-container {
+  display: flex;
+  justify-content: center;
+}

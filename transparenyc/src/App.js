@@ -71,7 +71,11 @@ class App extends React.Component {
         <div className="App-container">
           <nav id="navBar">
             {categories.map((elem, index) => (
-              <Link to={`/category/${elem}`}>{elem.replace("*", "")}</Link>
+              <Link to={`/category/${elem}`}>
+                {/* <span id="NavLinks"> */}
+                  {elem.replace("*", "")}
+                {/* </span> */}
+              </Link>
             ))}
           </nav>
           <Switch>
