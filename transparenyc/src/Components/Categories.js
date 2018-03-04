@@ -9,56 +9,51 @@ class Categories extends React.Component {
     super(props)
 
     this.state = {
+      category: '',
       organizations: [],
       selectedValue: ''
     }
   }
 
   handleSelect = e => {
-    console.log("the state in the HS:", this.state)
-    this.setState({selectedValue: e.target.value})
+    this.setState({
+      selectedValue: e.target.value
+    });
   }
-  componentDidMount() {
-    console.log("Im in did mount")
 
-    let {organizations, selectedValue} = this.state;
+  componentDidMount() {
     let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
     axios
       .get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
       .then(response => {
-        console.log(response.data)
-        let emptyArr2 = [];
-        response
-          .data
+        let organizations = [];
+        response.data
           .forEach(agency => {
-            emptyArr2.push(agency.award_lead_city_agency)
+            organizations.push(agency.award_lead_city_agency)
           });
         this.setState(() => {
-          console.log('setting state!');
-          return {organizations: emptyArr2}
+          return { 
+            category: this.props.match.params.category, 
+            organizations
+          }
         })
       })
   }
 
-  componentWillReceiveProps() {
-    console.log("Im in cwrp2!!")
-
-    let { organizations } = this.state;
-    let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
+  componentWillReceiveProps(nextProps) {
+    let path = `$where=funding_category='${nextProps.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
     axios
       .get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
       .then(response => {
-        console.log(response.data)
-        let emptyArr2 = [];
-        response
-          .data
+        let organizations = [];
+        response.data
           .forEach(agency => {
-            emptyArr2.push(agency.award_lead_city_agency)
+            organizations.push(agency.award_lead_city_agency)
           })
         this.setState(() => {
-          console.log('setting state!')
           return {
-            organizations: emptyArr2,
+            category: nextProps.match.params.category,
+            organizations,
             selectedValue: ""
           }
         })
@@ -66,19 +61,18 @@ class Categories extends React.Component {
   }
 
   render() {
-    console.log('PROPS', this.props);
-    console.log("StATTEEEE:", this.state)
-    const {organizations, selectedValue} = this.state
+    const { category, organizations, selectedValue } = this.state
     return (
       <div>
-        <h1>{this.props.match.params.category}</h1>
+        <h1>{category}</h1>
         <SelectList
           values={organizations}
           handleSelect={this.handleSelect}
           selectedValue={selectedValue}/>
           {selectedValue
-          ?  <ProjectList category={this.props.match.params.category} agency={selectedValue}/>
-          :  ""}
+            ?  <ProjectList category={category} agency={selectedValue}/>
+            :  ""
+          }
       </div>
     )
   }
