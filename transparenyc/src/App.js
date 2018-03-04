@@ -3,6 +3,8 @@ import { Route, Link } from 'react-router-dom';
 import Categories from './Components/Categories';
 import axios from 'axios';
 import './App.css';
+import About from './Components/About';
+import Home from './Components/Home';
 
 class App extends React.Component {
   constructor() {
@@ -34,11 +36,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-        <Link to={`/`}>
+        <Link to={'/'}>
           <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC" />
         </Link>
         <input placeholder="search" className="searchBar" />
-        <div className="headerSpace"></div>
+        <div className="headerSpace"><Link to='/about'>About</Link></div>
         </div>
         <nav id="navBar">
           {categories.map((elem, index) => 
@@ -50,8 +52,9 @@ class App extends React.Component {
           )}
         </nav>
 
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
         <Route path='/category/:category' component={Categories}/>
-
       </div>
     );
   }
