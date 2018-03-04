@@ -1,68 +1,91 @@
 .App {
   text-align: center;
   font-family: 'Oswald', sans-serif;
+  background-color: lightgray;
+}
+
+.App-container {
+  background-color: black;
+  width: 950px;
+  margin: 0 auto;
+  color: whitesmoke;
+  min-height: 100vh;
+  height: 100%;
 }
 
 #navBar {
   display: flex;
   width: 900px;
   margin: 0 auto;
+  padding-top: 5em;
+  justify-content: center;
+  align-items: center;
 }
 
 #navBar a {
-  text-decoration: none;
-  color: white;
+  width: 300px;
+  color: black;
   font-size: 14px;
+  text-decoration: none;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  height: 5em;
+  margin: 2px;
 }
 
-.header{
-  display:flex;
+#navBar a:hover {
+  background-color:rgba(221, 144, 81, 0.99);
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  display: flex;
   justify-content: space-around;
   margin: 0 0 8px 0;
   padding: 8px 0;
-  background-color: rgba(0, 0, 0, 0.27);
+  background-color: whitesmoke;
+  width: 100%;
 }
 
-.headerSpace{
-  width:20%
+.headerSpace {
+  width: 20%;
 }
 
-.searchBar{
+.searchBar {
   border-radius: 35px;
 }
 
-a{
+a {
   position: relative;
-  color: white;
+  color: black;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0 5px;
 }
 
-.NavLinks{
+.NavLinks {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#cc0000;
-  border:1px solid white;
-  border-radius:5px;
-  color:#fff;
-  width:300px;
+  width: 300px;
   margin: 2px;
- }
+}
 
 
-.NavLinks:active{
+.NavLinks:active {
   background-color:rgba(221, 144, 81, 0.99);
   height: -5px;
   margin-top: -5px;
   margin-left: -1px;
 }
-.NavLink:focus{
+
+.NavLink:focus {
   background-color:rgba(221, 144, 81, 0.99);
 }
-.NavLinks:hover{
+
+.NavLinks:hover {
   background-color:rgba(221, 144, 81, 0.99);
 }
 
@@ -78,26 +101,8 @@ a{
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
-
 .blurb-team-contacts a {
-color: black;
+  color: black;
 }
 
-.home-contact a {
-  color: black;
-}
-.home-contact{
-  display: inline-flex;
-  border: solid black 1px;
-}
-.official-info{
-  border: solid black 1px;
-}
-.official-info a{
-  color: black;
-}
-.officials-container{
-  display: flex;
-  justify-content: center;
-}
 

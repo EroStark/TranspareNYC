@@ -15,7 +15,7 @@ class App extends React.Component {
     super();
     this.state = {
       categories: [],
-      searchInput: "",
+      searchInput: '',
       redirect: false
     };
   }
@@ -68,20 +68,20 @@ class App extends React.Component {
           <SearchBar />
           <div className="headerSpace"><Link to='/about'>About</Link></div>
         </div>
-        <nav id="navBar">
-          {categories.map((elem, index) => (
-            <span key={index} className="NavLinks">
+        <div className="App-container">
+          <nav id="navBar">
+            {categories.map((elem, index) => (
               <Link to={`/category/${elem}`}>{elem.replace("*", "")}</Link>
-            </span>
-          ))}
-        </nav>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path="/category/:category" component={Categories} />
-          <Route path="/search/:search" component={Search} />
-        </Switch>
+            ))}
+          </nav>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+            <Route path="/category/:category" component={Categories} />
+            <Route path="/search/:search" component={Search} />
+          </Switch>
+        </div>
       </div>
     );
   }
