@@ -7,6 +7,7 @@ class SearchBar extends React.Component {
     super();
     this.state = {
       searchInput: "",
+      inputQuery: "",
       redirect: false
     };
   }
@@ -14,22 +15,25 @@ class SearchBar extends React.Component {
   handleChange = e => {
     this.setState({
       searchInput: e.target.value,
+      inputQuery: e.target.value,
       redirect: false
     });
   };
+
   handleSubmit = () => {
       const location = this.props.location.pathname
     
     console.log('state' , this.state)
-    const { searchInput } = this.state;
+    const { searchInput, inputQuery } = this.state;
     this.setState({
-      redirect: true
+      redirect: true,
+      inputQuery: ""
     });
     // return <Redirect to={`/search/${searchInput}`} />;
   };
 
   render() {
-    const { searchInput, redirect } = this.state;
+    const { inputQuery, searchInput, redirect } = this.state;
     const location = this.props.location.pathname
     console.log("search bar props", this.props.location.pathname);
     console.log('redirect search bar',redirect)
@@ -42,12 +46,11 @@ class SearchBar extends React.Component {
             state: { redirect: false }
           }}
         />
-        
         <input
           onChange={this.handleChange}
           placeholder="search"
           className="searchBar"
-          value={searchInput}
+          value={inputQuery}
         />
         <button onClick={this.handleSubmit}>Submit</button>
       </div>

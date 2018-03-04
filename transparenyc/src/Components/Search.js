@@ -55,13 +55,11 @@ and keywordQueryInput is reset back to ''.
               });
               console.log(this.state.noResultMessage); 
             } 
-
         })
         .catch((error)=> {
                 console.log(error);
             });
     }
-
 
     componentDidMount(){
             const {search} = this.props.match.params

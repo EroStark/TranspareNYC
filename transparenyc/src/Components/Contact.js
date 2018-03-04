@@ -35,7 +35,7 @@ class Contact extends React.Component {
                         <p>Address: {official.address}</p>
                         <p>Zip Code: {official.zip}</p>
                         {official.website
-                            ? <p>Website: <a href={official.website} /></p>
+                            ? <p>Website: <a href={`${official.website}`} target="_blank">{official.website}</a></p>
                             : ""}
                     </div>)}
                 </div>
