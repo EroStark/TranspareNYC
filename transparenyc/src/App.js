@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      agencies: []
+      categories: []
     }
   }
   
@@ -19,14 +19,14 @@ class App extends React.Component {
         'group=funding_category')
       .then(response => {
         console.log(response.data)
-        let agenciesArr = []
+        let categoriesArr = []
         response
           .data
           .forEach(elem => {
-            return agenciesArr.push(elem.funding_category);
+            return categoriesArr.push(elem.funding_category);
           })
-        console.log("agencies Arr", agenciesArr)
-        this.setState({agencies: agenciesArr});
+        console.log("agencies Arr", categoriesArr)
+        this.setState({categories: categoriesArr});
       })
       .catch(function (error) {
         console.log(error);
@@ -34,11 +34,11 @@ class App extends React.Component {
   }
 
   render() {
-    const {agencies} = this.state;
+    const {categories} = this.state;
     return (
       <div className="App">
         <nav id="NavBar">
-          {agencies.map((elem) => 
+          {categories.map((elem) => 
             <Link to={`/${elem}`}>
               {elem}
             </Link>
