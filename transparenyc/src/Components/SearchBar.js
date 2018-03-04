@@ -46,27 +46,41 @@ class SearchBar extends React.Component {
             state: { redirect: false }
           }}
         />
-        <input
-          onChange={this.handleChange}
-          placeholder="search"
-          className="searchBar"
-          value={inputQuery}
-        />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <div class="box">
+            <div class="container-1">
+            <span class="icon"><i class="fa fa-search"></i></span>
+                <input
+                type="search"
+                id= "search"
+                onChange={this.handleChange}
+                placeholder="search"
+                className="searchBar"
+                value={inputQuery}
+                />
+                <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
+            </div>
+        </div>
       </div>
       );
     }
 
     return (
-      <div>
-        <input
-          onChange={this.handleChange}
-          placeholder="search"
-          className="searchBar"
-          value={searchInput}
-        />
-        <button onClick={this.handleSubmit}>Submit</button>
+    <div>
+      <div class="box">
+        <div class="container-1">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input
+            type="search"
+            id= "search"
+            onChange={this.handleChange}
+            placeholder="search"
+            className="searchBar"
+            value={searchInput}
+            />
+            <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
+        </div>
       </div>
+    </div>
     );
   }
 }
