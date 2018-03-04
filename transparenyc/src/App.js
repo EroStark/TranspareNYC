@@ -37,8 +37,8 @@ class App extends React.Component {
         <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC logo" />
          </div>
          <nav id="navBar">
-          {categories.map((elem) =>
-            <Link to={`/category/${elem}`}>
+          {categories.map((elem, idx) =>
+            <Link key={idx} to={`/category/${elem}`}>
               {elem}
             </Link>
           )}
