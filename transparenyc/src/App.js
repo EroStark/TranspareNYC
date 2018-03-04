@@ -5,6 +5,7 @@ import axios from 'axios';
 import './App.css';
 import About from './Components/About';
 import Home from './Components/Home';
+import Contact from './Components/Contact';
 
 class App extends React.Component {
   constructor() {
@@ -54,6 +55,7 @@ class App extends React.Component {
 
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
+        <Route path='/contact' component={Contact} />
         <Route path='/category/:category' component={Categories}/>
       </div>
     );
