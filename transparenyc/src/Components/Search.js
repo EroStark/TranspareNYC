@@ -83,20 +83,20 @@ on the render - two new variables: results.length; one message to render both ke
 
         return(
             <div>
-                <h2>Search By Keyword</h2>
+                <h2>Search Projects and Funds By Keyword</h2>
                 <h5>To search by keyword, please type in a word, and click the "Submit" button.</h5>
-                <input type='text' placeholder='Please type in your keyword here' value={keywordQueryInput} onInput={this.handleInput} />
-                <button onClick={this.handleSubmit}>Submit</button>
+                <input type='text' placeholder='Please type a keyword here' value={keywordQueryInput} onInput={this.handleInput} />
+                <button onClick={this.handleSubmit}>Submit Your Query</button>
                 <h4>{message}</h4>
                 <h4>{noResultMessage}</h4>
-                <ol>
+                <ol className='project-container'>
                     {results.map((list, index)=>{
-                        return <li key={index}><p><b>Organization</b>: {list.payment_recipient}<br/> 
+                        return <div id='project'><p><b>Organization</b>: {list.payment_recipient}<br/> 
                             <b>Category</b>: {list.funding_category}<br/>
                             <b>Funding Amount</b>: {currencyFormatter.format(Number(list.payment_value), { code: 'USD' })}<br/>
                             <b>Project Name</b>: {list.project_name}<br/>
                             <b>Project Description</b>: {list.project_description}   
-                            </p></li>
+                            </p></div>
                             })}
                 </ol>
             </div>
