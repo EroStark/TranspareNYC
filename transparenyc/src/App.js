@@ -1,11 +1,14 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import { Redirect } from "react-router";
+import axios from "axios";
+import "./App.css";
 import Categories from "./Components/Categories";
 import Search from "./Components/Search";
 import SearchBar from "./Components/SearchBar"
-import axios from "axios";
-import "./App.css";
+import About from './Components/About';
+import Home from './Components/Home';
+import Contact from './Components/Contact';
 
 class App extends React.Component {
   constructor() {
@@ -63,7 +66,7 @@ class App extends React.Component {
             />
           </Link>
           <SearchBar />
-          <div className="headerSpace" />
+          <div className="headerSpace"><Link to='/about'>About</Link></div>
         </div>
         <nav id="navBar">
           {categories.map((elem, index) => (
@@ -73,6 +76,9 @@ class App extends React.Component {
           ))}
         </nav>
         <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
           <Route path="/category/:category" component={Categories} />
           <Route path="/search/:search" component={Search} />
         </Switch>
