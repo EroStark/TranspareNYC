@@ -1,5 +1,5 @@
 import React from 'react';
-
+import currencyFormatter from 'currency-formatter';
 /*
 This.state explanation: keywordQueryInput - initial user input; resultsFound - initially set to false === 0;
 results - gather API information; keywordSubmitted: takes keywordQueryInput and renders on page with results;
@@ -30,7 +30,7 @@ and keywordQueryInput is reset back to ''.
 */
     handleSubmit = event => {
         const { keywordQueryInput,results } = this.state;
-            fetch("https://data.cityofnewyork.us/resource/9haj-uwpr.json?$q=" + keywordQueryInput + '&$limit=10')
+            fetch("https://data.cityofnewyork.us/resource/9haj-uwpr.json?$q=" + keywordQueryInput + '&$limit=50')
             .then(response => response.json())
             .then(obj=>{
                 console.log(obj);
@@ -39,7 +39,8 @@ and keywordQueryInput is reset back to ''.
                     resultsFound: true,
                     results: obj,
                     keywordSubmitted: keywordQueryInput,
-                    keywordQueryInput: ''
+                    keywordQueryInput: '',
+                    noResultMessage: ''
                 })
                 console.log(results);
                 console.log(this.state.keywordSubmitted);
@@ -69,24 +70,23 @@ on the render - two new variables: results.length; one message to render both ke
 
         return(
             <div>
-                <h1>Search By Keyword</h1>
-                <h4>To search by keyword, please type in a word, and click the "Submit" button.</h4>
+                <h2>Search By Keyword</h2>
+                <h5>To search by keyword, please type in a word, and click the "Submit" button.</h5>
                 <input type='text' placeholder='Please type in your keyword here' value={keywordQueryInput} onInput={this.handleInput} />
                 <button onClick={this.handleSubmit}>Submit</button>
                 <h4>{message}</h4>
                 <h4>{noResultMessage}</h4>
                 <ol>
-                    {results.map(list=>{
-                        return <li key={list.payment_id}><p><b>Organization</b>: {list.payment_recipient}<br/> 
+                    {results.map((list, index)=>{
+                        return <li key={index}><p><b>Organization</b>: {list.payment_recipient}<br/> 
                             <b>Category</b>: {list.funding_category}<br/>
-                            <b>Funding Amount</b>: ${list.payment_value}<br/>
+                            <b>Funding Amount</b>: {currencyFormatter.format(Number(list.payment_value), { code: 'USD' })}<br/>
                             <b>Project Name</b>: {list.project_name}<br/>
                             <b>Project Description</b>: {list.project_description}   
                             </p></li>
                             })}
                 </ol>
             </div>
-            
         )
     }
 }
