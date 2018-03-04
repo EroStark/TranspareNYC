@@ -10,7 +10,8 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      categories: []
+      categories: [],
+      searchInput: ''
     }
   }
   
@@ -24,7 +25,7 @@ class App extends React.Component {
           .forEach(elem => {
             return categoriesArr.push(elem.funding_category);
           })
-        this.setState({categories: categoriesArr});
+        this.setState({categories: categoriesArr.sort()});
       })
       .catch(function (error) {
         console.log(error);
@@ -32,29 +33,29 @@ class App extends React.Component {
   }
 
   render() {
-    const {categories} = this.state;
+    const { categories, searchInput } = this.state;
     return (
       <div className="App">
         <div className="header">
-        <Link to={'/'}>
-          <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC" />
-        </Link>
-        <input placeholder="search" className="searchBar" />
-        <div className="headerSpace"><Link to='/about'>About</Link></div>
+          <Link to={'/'}>
+            <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC" />
+          </Link>
+          <input value={searchInput} type="text" placeholder="search" className="searchBar" />
+          <div className="headerSpace"><Link to='/about'>About</Link></div>
         </div>
-        <nav id="navBar">
-          {categories.map((elem, index) => 
-            <span key={index}className="NavLinks">
-            <Link to={`/category/${elem}`}>
-                {elem}
-            </Link>
-            </span>
-          )}
-        </nav>
+        <div className="App-container">
+          <nav id="navBar">
+            {categories.map((elem, index) => 
+              <Link to={`/category/${elem}`}>
+                  {elem}
+              </Link>
+            )}
+          </nav>
 
-        <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/category/:category' component={Categories}/>
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/category/:category' component={Categories}/>
+        </div>
       </div>
     );
   }
