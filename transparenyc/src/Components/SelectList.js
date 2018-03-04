@@ -4,15 +4,15 @@ import '../App.css';
 class SelectList extends React.Component {
     render() {
       const { values, selectedValue, handleSelect } = this.props
-      const displayValues = ['',...values]
+      const displayValues = ['', ...values]
   
       return (
         <select
           value={selectedValue}
           onChange={handleSelect}
         >
-          {displayValues.map(val =>
-            <option value={val}>{val}</option>)}
+          {displayValues.map((val, idx) =>
+            <option key={idx} value={val}> {val} </option>)}
         </select>
       )
     }

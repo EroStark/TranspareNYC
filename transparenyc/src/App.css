@@ -4,15 +4,27 @@
 
 #navBar {
   display: flex;
-  width: 700px;
+  width: 900px;
   margin: 0 auto;
-  justify-content: space-around;
 }
 
 #navBar a {
   text-decoration: none;
   color: black;
   font-size: 14px;
+}
+
+.project-container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+#project {
+  background-color: darkblue;
+  text-align: left;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 
