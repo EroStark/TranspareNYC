@@ -40,7 +40,7 @@ class App extends React.Component {
         <div className="Header">
         <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC logo" />
          </div>
-          {agencies.map((elem) => {
+          {categories.map((elem) => {
             return <div>
               <Link to={`/category/${elem}`}>
                 {elem}
