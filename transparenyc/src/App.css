@@ -78,8 +78,23 @@ a{
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
+
 .blurb-team-contacts a {
 color: black;
 }
 
+.home-contact a {
+  color: black;
+}
+.home-contact{
+  display: inline-flex;
+  border: solid black 1px;
+}
+.official-info{
+  border: solid black 1px;
+}
+.officials-container{
+  display: flex;
+  justify-content: center;
+}
 
