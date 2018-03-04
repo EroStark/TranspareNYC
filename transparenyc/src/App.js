@@ -37,17 +37,21 @@ class App extends React.Component {
     const {categories} = this.state;
     return (
       <div className="App">
-        <nav id="NavBar">
-          {categories.map((elem) => 
-            <Link to={`/${elem}`}>
-              {elem}
-            </Link>
-          )}
-        </nav>
+        <div className="Header">
+        <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC logo" />
+         </div>
+          {agencies.map((elem) => {
+            return <div>
+              <Link to={`/category/${elem}`}>
+                {elem}
+              </Link>
+            </div>
+          
+        })}
 
         {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
 
-        <Route path='/:category' component={Categories}/>
+        <Route path='/category/:category' component={Categories}/>
 
       </div>
     );
