@@ -65,6 +65,7 @@ class Categories extends React.Component {
     return (
       <div>
         <h1>{category.replace("*","")}</h1>
+        Select an agency: {" "}
         <SelectList
           values={organizations}
           handleSelect={this.handleSelect}

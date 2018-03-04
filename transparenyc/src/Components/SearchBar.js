@@ -64,7 +64,7 @@ class SearchBar extends React.Component {
           placeholder="search"
           className="searchBar"
           value={searchInput}
-        />
+        /> {" "}
         <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );

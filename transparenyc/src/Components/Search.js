@@ -57,18 +57,18 @@ and keywordQueryInput is reset back to ''.
             } 
         })
         .catch((error)=> {
-                console.log(error);
-            });
+            console.log(error);
+        });
     }
 
     componentDidMount(){
-            const {search} = this.props.match.params
-            this.handleQuery(search)
-            console.log('props', this.props.match.params.search)
+        const {search} = this.props.match.params;
+        this.handleQuery(search);
+        console.log('props', this.props.match.params.search);
     }
 
     componentWillReceiveProps(props){
-        const {search} = props.match.params
+        const { search } = props.match.params
         this.handleQuery(search)
         console.log('props will recieve', props.match.params.search)
     }
@@ -85,19 +85,21 @@ on the render - two new variables: results.length; one message to render both ke
             <div>
                 <h2>Search By Keyword</h2>
                 <h5>To search by keyword, please type in a word, and click the "Submit" button.</h5>
-                <input type='text' placeholder='Please type in your keyword here' value={keywordQueryInput} onInput={this.handleInput} />
+                <input type='text' placeholder='Enter keyword' value={keywordQueryInput} onInput={this.handleInput} /> {" "}
                 <button onClick={this.handleSubmit}>Submit</button>
                 <h4>{message}</h4>
                 <h4>{noResultMessage}</h4>
                 <ol>
-                    {results.map((list, index)=>{
-                        return <li key={index}><p><b>Organization</b>: {list.payment_recipient}<br/> 
-                            <b>Category</b>: {list.funding_category}<br/>
-                            <b>Funding Amount</b>: {currencyFormatter.format(Number(list.payment_value), { code: 'USD' })}<br/>
-                            <b>Project Name</b>: {list.project_name}<br/>
-                            <b>Project Description</b>: {list.project_description}   
-                            </p></li>
-                            })}
+                    {results.map((list, index)=>
+                        <li key={index}>
+                            <p><b>Organization</b>: {list.payment_recipient}<br/> 
+                                <b>Category</b>: {list.funding_category}<br/>
+                                <b>Funding Amount</b>: {currencyFormatter.format(Number(list.payment_value), { code: 'USD' })}<br/>
+                                <b>Project Name</b>: {list.project_name}<br/>
+                                <b>Project Description</b>: {list.project_description}   
+                            </p>
+                        </li>
+                    )}
                 </ol>
             </div>
         )
