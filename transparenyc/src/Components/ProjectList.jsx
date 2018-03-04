@@ -40,13 +40,17 @@ class ProjectList extends React.Component {
 
   render() {
     const { projects } = this.state
-    let total = 0;
-    projects.forEach(elem => total += Number(elem.payment_value))
+    let total = projects.reduce((total, currElem) => {
+        return currElem.payment_value
+          ? total + Number(currElem.payment_value)
+          : total + 0
+        }, 0
+      );
     return (
       <div>
-        <h1>{this.props.agency}</h1>
-        <h4>Total Funds Awarded: {currencyFormatter.format(Number(total), { code: 'USD' })}</h4>
-        <div class="project-container">
+        <h1>Select an agency: {this.props.agency}</h1>
+        <h4>Total Funds Awarded: {currencyFormatter.format(total, { code: 'USD' })}</h4>
+        <div className="project-container">
           {projects.map((project, idx) =>
             <div key={idx} id="project">
               <p>Project Name: {project.project_name}</p>
