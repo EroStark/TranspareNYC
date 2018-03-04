@@ -41,25 +41,14 @@ class App extends React.Component {
         <div className="headerSpace"></div>
         </div>
         <nav id="navBar">
-          {categories.map((elem) => 
-            <span className="NavLinks">
+          {categories.map((elem, index) => 
+            <span key={index}className="NavLinks">
             <Link to={`/category/${elem}`}>
                 {elem}
             </Link>
             </span>
           )}
         </nav>
-        {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
-        {/* <div className="Header">
-        <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC logo" />
-         </div>
-         <nav id="navBar">
-          {categories.map((elem) =>
-            <Link to={`/category/${elem}`}>
-              {elem}
-            </Link>
-          )}
-          </nav> */}
 
         <Route path='/category/:category' component={Categories}/>
 
