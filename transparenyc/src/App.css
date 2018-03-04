@@ -1,16 +1,19 @@
-body, html{
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
 .App {
-display: flex;
-justify-content: center
+  text-align: center;
 }
 
-.link{
-
-
+#navBar {
+  display: flex;
+  width: 700px;
+  margin: 0 auto;
+  justify-content: space-around;
 }
+
+#navBar a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+
 
