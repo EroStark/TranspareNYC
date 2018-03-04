@@ -33,16 +33,22 @@ class App extends React.Component {
     const {categories} = this.state;
     return (
       <div className="App">
-        <div className="Header">
-        <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC logo" />
-         </div>
-         <nav id="navBar">
-          {categories.map((elem) =>
+        <div className="header">
+        <Link to={`/`}>
+          <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC" />
+        </Link>
+        <input placeholder="search" className="searchBar" />
+        <div className="headerSpace"></div>
+        </div>
+        <nav id="navBar">
+          {categories.map((elem, index) => 
+            <span key={index}className="NavLinks">
             <Link to={`/category/${elem}`}>
-              {elem}
+                {elem}
             </Link>
+            </span>
           )}
-          </nav>
+        </nav>
 
         <Route path='/category/:category' component={Categories}/>
 
