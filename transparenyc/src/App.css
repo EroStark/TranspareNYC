@@ -65,17 +65,13 @@ a {
   margin: 0 5px;
 }
 
-/* .NavLinks {
+.NavLinks {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#cc0000;
-  border: 1px solid;
-  border-radius: 5px;
-  color:#fff;
   width: 300px;
   margin: 2px;
-} */
+}
 
 
 .NavLinks:active {

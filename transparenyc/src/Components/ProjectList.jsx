@@ -40,10 +40,11 @@ class ProjectList extends React.Component {
 
   render() {
     const { projects } = this.state
-    let total = projects.reduce((total, currElem) => 
-        currElem.payment_value 
-          ? Number(total) + Number(currElem.payment_value) 
-          : Number(total) + 0
+    let total = projects.reduce((total, currElem) => {
+        return currElem.payment_value 
+          ? total + Number(currElem.payment_value) 
+          : total + 0
+        }, 0
       );
     return (
       <div>

@@ -23,6 +23,7 @@ class Search extends React.Component{
         })
     }
 
+
 /*
 handleSubmit - uses keywordQueryInput value to fetch query from Federal Stimulus Data API. If response length is > 0, updates
 resultsFound to true; appends response into results; keywordQueryInput.value is appended to keywordSubmitted,
@@ -30,35 +31,47 @@ and keywordQueryInput is reset back to ''.
 */
     handleSubmit = event => {
         const { keywordQueryInput,results } = this.state;
-            fetch("https://data.cityofnewyork.us/resource/9haj-uwpr.json?$q=" + keywordQueryInput + '&$limit=50')
-            .then(response => response.json())
-            .then(obj=>{
-                console.log(obj);
-                if(obj.length > 0){
-                this.setState({
-                    resultsFound: true,
-                    results: obj,
-                    keywordSubmitted: keywordQueryInput,
-                    keywordQueryInput: '',
-                    noResultMessage: ''
-                })
-                console.log(results);
-                console.log(this.state.keywordSubmitted);
-                } else {
-                  this.setState({
-                    results: [],
-                    resultsFound: false,
-                    noResultMessage: "No results founds. Please try again."
-                  });
-                  console.log(this.state.noResultMessage); 
-                } 
-
-            })
-            .catch((error)=> {
-                    console.log(error);
-                });
+            this.handleQuery(keywordQueryInput)
         };
 
+    handleQuery = (value) => {
+        fetch("https://data.cityofnewyork.us/resource/9haj-uwpr.json?$q=" + value + '&$limit=50')
+        .then(response => response.json())
+        .then(obj=>{
+            console.log(obj);
+            if(obj.length > 0){
+            this.setState({
+                resultsFound: true,
+                results: obj,
+                keywordSubmitted: value,
+                keywordQueryInput: '',
+                noResultMessage: ''
+            })
+            } else {
+              this.setState({
+                results: [],
+                resultsFound: false,
+                noResultMessage: "No results founds. Please try again."
+              });
+              console.log(this.state.noResultMessage); 
+            } 
+        })
+        .catch((error)=> {
+                console.log(error);
+            });
+    }
+
+    componentDidMount(){
+            const {search} = this.props.match.params
+            this.handleQuery(search)
+            console.log('props', this.props.match.params.search)
+    }
+
+    componentWillReceiveProps(props){
+        const {search} = props.match.params
+        this.handleQuery(search)
+        console.log('props will recieve', props.match.params.search)
+    }
 /*
 on the render - two new variables: results.length; one message to render both keyword and number of results (even though
     demo version is limited to 10.
