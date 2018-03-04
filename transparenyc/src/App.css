@@ -1,21 +1,44 @@
-body, html{
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
 .App {
-display: flex;
-justify-content: center
+  text-align: center;
 }
 
-.App a {
+#navBar {
   display: flex;
-  justify-content: space-between;
+  width: 700px;
+  margin: 0 auto;
+  justify-content: space-around;
 }
 
-.link{
-
-
+#navBar a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
 }
+
+.header{
+  display:flex;
+  justify-content: space-around;
+  margin: 0 0 8px 0;
+  padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.27);
+}
+
+.headerSpace{
+  width:20%
+}
+
+.searchBar{
+  border-radius: 35px;
+}
+
+a{
+  position: relative;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+
 
