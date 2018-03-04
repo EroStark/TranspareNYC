@@ -53,6 +53,7 @@ class App extends React.Component {
           )}
         </nav>
         {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
+
         <Route path='/category/:category' component={Categories}/>
 
       </div>
