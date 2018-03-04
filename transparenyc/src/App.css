@@ -161,20 +161,20 @@ a {
   outline:none;
   background: #8F939C;
 }
-.home-contact{
+.home-contact {
   display: inline-flex;
 border: white solid 1px;
 }
-.official-info{
+.official-info {
   border: white solid 1px;
 }
-.home-contact a{
+.home-contact a {
   color: white;
 }
-.official-info a{
+.official-info a {
   color: white;
 }
-.blurb-team-contacts a{
+.blurb-team-contacts a {
   color: white
 }
 

@@ -83,7 +83,7 @@ class ProjectList extends React.Component {
       );
     return (
       <div>
-        <h1>{agency}: {this.agencyName.agency}</h1>
+        <h1>{agency}: {this.agencyName[agency]}</h1>
         <h4>Total Funds Awarded: {currencyFormatter.format(total, { code: 'USD' })}</h4>
         <div className="project-container">
           {projects.map((project, idx) => 
