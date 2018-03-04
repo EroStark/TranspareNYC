@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Categories from './Components/Categories';
 import axios from 'axios';
 import './App.css';
@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      agencies: []
+      categories: []
     }
   }
   
@@ -17,15 +17,12 @@ class App extends React.Component {
       .get('https://data.cityofnewyork.us/resource/9haj-uwpr.json?$select=funding_category&$' +
         'group=funding_category')
       .then(response => {
-        console.log(response.data)
-        let agenciesArr = []
-        response
-          .data
+        let categoriesArr = []
+        response.data
           .forEach(elem => {
-            return agenciesArr.push(elem.funding_category);
+            return categoriesArr.push(elem.funding_category);
           })
-        console.log("agencies Arr", agenciesArr)
-        this.setState({agencies: agenciesArr});
+        this.setState({categories: categoriesArr});
       })
       .catch(function (error) {
         console.log(error);
@@ -33,22 +30,19 @@ class App extends React.Component {
   }
 
   render() {
-    const {agencies} = this.state;
+    const {categories} = this.state;
     return (
       <div className="App">
         <div className="Header">
         <img src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg" alt="TranspNYC logo" />
          </div>
-          {agencies.map((elem) => {
-            return <div>
-              <Link to={`/category/${elem}`}>
-                {elem}
-              </Link>
-            </div>
-          
-        })}
-
-        {/* <Route exact path='/transparency' render={ this.renderUserList } /> */}
+         <nav id="navBar">
+          {categories.map((elem) =>
+            <Link to={`/category/${elem}`}>
+              {elem}
+            </Link>
+          )}
+          </nav>
 
         <Route path='/category/:category' component={Categories}/>
 
