@@ -93,6 +93,9 @@ color: black;
 .official-info{
   border: solid black 1px;
 }
+.official-info a{
+  color: black;
+}
 .officials-container{
   display: flex;
   justify-content: center;

@@ -18,7 +18,7 @@ const Home = props => {
                 </p>
             </div>
             <div className="home-contact">
-                <Link to='/contact'>Contact your local official</Link>
+                <Link to='/contact'>Contact your local public authority figure</Link>
             </div>
         </div>
     )

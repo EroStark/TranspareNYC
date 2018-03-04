@@ -64,7 +64,7 @@ class Categories extends React.Component {
     const { category, organizations, selectedValue } = this.state
     return (
       <div>
-        <h1>{category}</h1>
+        <h1>{category.replace("*","")}</h1>
         <SelectList
           values={organizations}
           handleSelect={this.handleSelect}
