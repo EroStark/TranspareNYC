@@ -106,6 +106,10 @@ a {
   margin-bottom: 0.5em;
 }
 
+#project:hover {
+  background-color: rgb(209, 234, 255);
+}
+
 .blurb-team-contacts a {
   color: white;
 }
