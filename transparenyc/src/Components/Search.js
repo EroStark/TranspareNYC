@@ -94,7 +94,7 @@ on the render - two new variables: results.length; one message to render both ke
                 <h4>{noResultMessage}</h4>
                 <div className="project-container">
                     {results.map((list, index)=>
-                        <div id="project" key={index}>
+                        <div id="project" key={index} draggable="true">
                             <p>
                                 <b>Organization</b>: {list.payment_recipient}<br/> 
                                 <b>Category</b>: {list.funding_category}<br/>
