@@ -49,11 +49,11 @@ class SearchBar extends React.Component {
                   type="search"
                   id="search"
                   onChange={this.handleChange}
-                  placeholder="search"
+                  placeholder="Search e.g. housing, education..."
                   className="searchBar"
                   value={inputQuery}
                 />
-                <button onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
+                <button onClick={this.handleSubmit} disabled={!searchInput}><i className="fa fa-search fa-2x"></i></button>
             </div>
         </div>
       </div>
@@ -69,11 +69,11 @@ class SearchBar extends React.Component {
                 type="search"
                 id= "search"
                 onChange={this.handleChange}
-                placeholder="search"
+                placeholder="Search e.g. housing, education..."
                 className="searchBar"
                 value={searchInput}
               />
-              <button onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
+              <button onClick={this.handleSubmit} disabled={!searchInput}><i className="fa fa-search fa-2x" ></i></button>
           </div>
         </div>
       </div>
