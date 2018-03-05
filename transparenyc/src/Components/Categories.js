@@ -66,6 +66,7 @@ class Categories extends React.Component {
 
   render() {
     const { category, organizations, selectedValue } = this.state
+    console.log('The key of keys',KEY)
     return (
       <div>
         <h1>{category.replace("*","")}</h1>
