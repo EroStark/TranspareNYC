@@ -8,10 +8,10 @@ const Home = props => {
         <div className="home-container">
             <div className="home-blurb">
                 <p className="home-info">
-                   The information about public funding and
+                   The information available about public funding and
                     government agencies is very dense. It could be a challenge for the average New
                     Yorker to find out whether the issues they care about are receiving funding, or
-                    even which organization is responsible for the issues they care about. When
+                    even which organization is responsible for said issues. When
                     someone wants to contact a representative, vote for a candidate, or determine
                     which organization to support, it is critical to have access to digestible
                     information regarding these issues.
