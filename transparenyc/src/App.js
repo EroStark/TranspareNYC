@@ -9,6 +9,7 @@ import SearchBar from "./Components/SearchBar"
 import About from './Components/About';
 import Home from './Components/Home';
 import Contact from './Components/Contact';
+import Representatives from './Components/Representatives'
 
 class App extends React.Component {
   constructor() {
@@ -75,11 +76,12 @@ class App extends React.Component {
             ))}
           </nav>
           <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/about' component={About}/>
-            <Route path='/contact' component={Contact}/>
-            <Route path="/category/:category" component={Categories}/>
-            <Route path="/search/:search" component={Search}/>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+            <Route path="/category/:category" component={Categories} />
+            <Route path="/search/:search" component={Search} />
+            <Route path='/reps' component={Representatives}/>
           </Switch>
         <div id="footer-div">
           <footer id="footer">Made with 💕 by Team TranspareNYC</footer>

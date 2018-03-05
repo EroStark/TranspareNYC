@@ -58,6 +58,7 @@ class Categories extends React.Component {
   }
 
   render() {
+
     const {category, organizations, selectedValue} = this.state
     return (
       <div>

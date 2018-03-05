@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import currencyFormatter from 'currency-formatter'
+
  
 class ProjectList extends React.Component {
   constructor(props) {
@@ -74,8 +75,8 @@ class ProjectList extends React.Component {
   render() {
     const { projects, agency } = this.state;
     let total = projects.reduce((total, currElem) => {
-        return currElem.payment_value 
-          ? total + Number(currElem.payment_value) 
+        return currElem.payment_value
+          ? total + Number(currElem.payment_value)
           : total + 0
         }, 0
       );
@@ -84,7 +85,7 @@ class ProjectList extends React.Component {
         <h1>{agency}: {this.agencyName[agency]}</h1>
         <h4>Total Funds Awarded: {currencyFormatter.format(total, { code: 'USD' })}</h4>
         <div className="project-container">
-          {projects.map((project, idx) => 
+          {projects.map((project, idx) =>
             <div key={idx} id="project">
               <p>Project Name: {project.project_name}</p>
               <p>Payment Value: {currencyFormatter.format(Number(project.payment_value), { code: 'USD' })}</p>
@@ -98,4 +99,4 @@ class ProjectList extends React.Component {
   }
 }
 
-export default ProjectList;
+export default ProjectList
