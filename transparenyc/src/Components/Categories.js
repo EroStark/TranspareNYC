@@ -20,26 +20,22 @@ class Categories extends React.Component {
   }
 
   handleSelect = e => {
-    this.setState({
-      selectedValue: e.target.value
-    });
+    this.setState({selectedValue: e.target.value})
   }
 
   componentDidMount() {
-    let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`;
+    let path = `$where=funding_category='${this.props.match.params.category}'&$group=award_lead_city_agency&$select=award_lead_city_agency`
     axios
       .get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
       .then(response => {
         let organizations = [];
-        response.data
+        response
+          .data
           .forEach(agency => {
             organizations.push(agency.award_lead_city_agency)
           });
         this.setState(() => {
-          return { 
-            category: this.props.match.params.category, 
-            organizations
-          }
+          return {category: this.props.match.params.category, organizations}
         })
       })
   }
@@ -50,34 +46,30 @@ class Categories extends React.Component {
       .get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + path)
       .then(response => {
         let organizations = [];
-        response.data
+        response
+          .data
           .forEach(agency => {
             organizations.push(agency.award_lead_city_agency)
           })
         this.setState(() => {
-          return {
-            category: nextProps.match.params.category,
-            organizations,
-            selectedValue: ""
-          }
+          return {category: nextProps.match.params.category, organizations, selectedValue: ""}
         })
       })
   }
 
   render() {
-    const { category, organizations, selectedValue } = this.state
+    const {category, organizations, selectedValue} = this.state
     return (
       <div>
-        <h1>{category.replace("*","")}</h1>
+        <h1>{category.replace("*", "")}</h1>
         Select an agency: {" "}
         <SelectList
           values={organizations}
           handleSelect={this.handleSelect}
-          selectedValue={selectedValue}/>
-          {selectedValue
-            ?  <ProjectList category={category} agency={selectedValue}/>
-            :  ""
-          }
+          selectedValue={selectedValue}/> {selectedValue
+          ? <ProjectList category={category} agency={selectedValue}/>
+          : ""
+}
       </div>
     )
   }
