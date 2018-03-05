@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import '../App.css';
 
@@ -8,13 +8,20 @@ const Home = props => {
         <div className="home-container">
             <div className="home-blurb">
                 <p className="home-info">
-                    The American Recovery and Reinvestment Act of 2009 (ARRA) (Pub.L. 111–5),
-                    nicknamed the Recovery Act, was a stimulus package enacted by the 111th U.S.
-                    Congress and signed into law by President Barack Obama in February 2009.
-                    Developed in response to the Great Recession, the ARRA's primary objective was
-                    to save existing jobs and create new ones as soon as possible. Other objectives
-                    were to provide temporary relief programs for those most affected by the
-                    recession and invest in infrastructure, education, health, and renewable energy.
+                   The information about public funding and
+                    government agencies is very dense. It could be a challenge for the average New
+                    Yorker to find out whether the issues they care about are receiving funding, or
+                    even which organization is responsible for the issues they care about. When
+                    someone wants to contact a representative, vote for a candidate, or determine
+                    which organization to support, it is critical to have access to digestible
+                    information regarding these issues.
+                </p>
+                <p className="home-info">
+                    <span id="transparency">transpareNYC</span> takes all the project funding information from the publicly provided API
+                    and organizes it into a much more readable form. We hope that by making this
+                    information easy to understand, it would give the average NYC resident knowledge
+                    about whether the issues they care about are being addressed and which agencies
+                    are responsible.
                 </p>
             </div>
             <div className="home-contact">
