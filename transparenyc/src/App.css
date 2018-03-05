@@ -37,7 +37,7 @@
 }
 
 #navBar a:hover {
-  background-color:rgba(221, 144, 81, 0.99);
+  background-color: rgba(221, 144, 81, 0.99);
 }
 
 .header {
@@ -83,14 +83,14 @@ a {
 }
 
 .NavLinks:active {
-  background-color:rgba(221, 144, 81, 0.99);
+  background-color: rgba(221, 144, 81, 0.99);
   height: -5px;
   margin-top: -5px;
   margin-left: -1px;
 }
 
 .NavLink:focus {
-  background-color:rgba(221, 144, 81, 0.99);
+  background-color: rgba(221, 144, 81, 0.99);
 }
 
 .project-container {
@@ -114,9 +114,18 @@ a {
   color: white;
 }
 
+.home-info {
+  width: 850px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  font-size: 20px;
+}
+
 .home-contact a {
   color: whitesmoke;
 }
+
 /* search bar */
 
 .container-1 {
@@ -138,7 +147,6 @@ a {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-
   -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
@@ -146,16 +154,19 @@ a {
   transition: background .55s ease;
 }
 
- /* the color placeholder font in different brands */
+/* the color placeholder font in different brands */
+
 .container-1 input#search::-webkit-input-placeholder {
   color: #D0DFEE;
 }
 
-.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+.container-1 input#search:-moz-placeholder {
+  /* Firefox 18- */
   color: #D0DFEE;
 }
 
-.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+.container-1 input#search::-moz-placeholder {
+  /* Firefox 19+ */
   color: #D0DFEE;
 }
 
@@ -164,7 +175,8 @@ a {
 }
 
 /* hacky solution for the position */
-.container-1 .icon{
+
+.container-1 .icon {
   position: absolute;
   top: 50%;
   margin-left: -290px;
@@ -174,9 +186,13 @@ a {
 }
 
 /* transition color connects to container #search for animation */
-.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+
+.container-1 input#search:hover,
+.container-1 input#search:focus,
+.container-1 input#search:active {
   outline: none;
-  background: rgba(125, 132, 145, 0.74);;
+  background: rgba(125, 132, 145, 0.74);
+  ;
 }
 
 .home-contact {
@@ -228,4 +244,20 @@ a {
 
 .representatives-info {
   border-bottom: 1px solid white
+}
+
+@media screen and (max-width: 950px) {
+  #navBar {
+    width: 700px;
+  }
+  .App-container {
+    width: 750px;
+    min-height: 1366px;
+  }
+  .project-container {
+    width: 600px;
+  }
+  .home-info {
+    width: 650px;
+  }
 }
