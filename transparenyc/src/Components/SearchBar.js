@@ -73,7 +73,7 @@ class SearchBar extends React.Component {
                 className="searchBar"
                 value={searchInput}
               />
-              <button onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
+              <button onClick={this.handleSubmit}><i className="fa fa-search fa-2x"></i></button>
           </div>
         </div>
       </div>
