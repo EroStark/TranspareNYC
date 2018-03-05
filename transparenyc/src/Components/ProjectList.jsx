@@ -1,9 +1,7 @@
-import React from 'react'
-import axios from 'axios'
-import currencyFormatter from 'currency-formatter'
+import React from 'react';
+import axios from 'axios';
+import currencyFormatter from 'currency-formatter';
  
-
-
 class ProjectList extends React.Component {
   constructor(props) {
     super(props);

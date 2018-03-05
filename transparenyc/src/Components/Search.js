@@ -84,12 +84,15 @@ on the render - two new variables: results.length; one message to render both ke
         return(
             <div>
                 <h2>Search Projects and Funds By Keyword</h2>
-                <h5>To search by keyword, please type in a word, and click the "Submit" button.</h5>
-                <input type='text' placeholder='Enter keyword' value={keywordQueryInput} onInput={this.handleInput} /> {" "}
-                <button onClick={this.handleSubmit}>Submit</button>
+                <h5>To search by keyword, please type in a word, and click the Search Button to see your results.</h5>
+                <input type='text' 
+                       placeholder='Enter keyword'
+                       value={keywordQueryInput} 
+                       onInput={this.handleInput} /> {" "}
+                <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
                 <h4>{message}</h4>
                 <h4>{noResultMessage}</h4>
-                <ol className="project-container">
+                <div className="project-container">
                     {results.map((list, index)=>
                         <div id="project" key={index}>
                             <p>
@@ -101,7 +104,7 @@ on the render - two new variables: results.length; one message to render both ke
                             </p>
                         </div>
                     )}
-                </ol>
+                </div>
             </div>
         )
     }
