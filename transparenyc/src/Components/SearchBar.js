@@ -65,22 +65,22 @@ class SearchBar extends React.Component {
     }
 
     return (
-    <div>
-      <div class="box">
-        <div class="container-1">
-            <span class="icon"><i class="fa fa-search"></i></span>
-            <input
-            type="search"
-            id= "search"
-            onChange={this.handleChange}
-            placeholder="search"
-            className="searchBar"
-            value={searchInput}
-            />
-            <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
+      <div>
+        <div class="box">
+          <div class="container-1">
+              <span class="icon"><i class="fa fa-search"></i></span>
+              <input
+              type="search"
+              id= "search"
+              onChange={this.handleChange}
+              placeholder="search"
+              className="searchBar"
+              value={searchInput}
+              />
+              <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }

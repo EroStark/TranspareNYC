@@ -37,7 +37,7 @@ and keywordQueryInput is reset back to ''.
     handleQuery = (value) => {
         fetch("https://data.cityofnewyork.us/resource/9haj-uwpr.json?$q=" + value + '&$limit=50')
         .then(response => response.json())
-        .then(obj=>{
+        .then(obj => {
             console.log(obj);
             if(obj.length > 0){
             this.setState({
@@ -57,20 +57,20 @@ and keywordQueryInput is reset back to ''.
             } 
         })
         .catch((error)=> {
-                console.log(error);
-            });
+            console.log(error);
+        });
     }
 
     componentDidMount(){
-            const {search} = this.props.match.params
-            this.handleQuery(search)
-            console.log('props', this.props.match.params.search)
+        const {search} = this.props.match.params;
+        this.handleQuery(search);
+        console.log('props', this.props.match.params.search);
     }
 
     componentWillReceiveProps(props){
-        const {search} = props.match.params
+        const { search } = props.match.params
         this.handleQuery(search)
-        console.log('props will recieve', props.match.params.search)
+        console.log('props will receive', props.match.params.search)
     }
 /*
 on the render - two new variables: results.length; one message to render both keyword and number of results (even though
@@ -85,19 +85,22 @@ on the render - two new variables: results.length; one message to render both ke
             <div>
                 <h2>Search Projects and Funds By Keyword</h2>
                 <h5>To search by keyword, please type in a word, and click the "Submit" button.</h5>
-                <input type='text' placeholder='Please type a keyword here' value={keywordQueryInput} onInput={this.handleInput} />
-                <button onClick={this.handleSubmit}>Submit Your Query</button>
+                <input type='text' placeholder='Enter keyword' value={keywordQueryInput} onInput={this.handleInput} /> {" "}
+                <button onClick={this.handleSubmit}>Submit</button>
                 <h4>{message}</h4>
                 <h4>{noResultMessage}</h4>
-                <ol className='project-container'>
-                    {results.map((list, index)=>{
-                        return <div id='project'><p><b>Organization</b>: {list.payment_recipient}<br/> 
-                            <b>Category</b>: {list.funding_category}<br/>
-                            <b>Funding Amount</b>: {currencyFormatter.format(Number(list.payment_value), { code: 'USD' })}<br/>
-                            <b>Project Name</b>: {list.project_name}<br/>
-                            <b>Project Description</b>: {list.project_description}   
-                            </p></div>
-                            })}
+                <ol className="project-container">
+                    {results.map((list, index)=>
+                        <div id="project" key={index}>
+                            <p>
+                                <b>Organization</b>: {list.payment_recipient}<br/> 
+                                <b>Category</b>: {list.funding_category}<br/>
+                                <b>Funding Amount</b>: {currencyFormatter.format(Number(list.payment_value), { code: 'USD' })}<br/>
+                                <b>Project Name</b>: {list.project_name}<br/>
+                                <b>Project Description</b>: {list.project_description}   
+                            </p>
+                        </div>
+                    )}
                 </ol>
             </div>
         )
