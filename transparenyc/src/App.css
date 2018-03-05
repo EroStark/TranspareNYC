@@ -148,22 +148,22 @@ a {
 }
 
 .container-1 input#search:-moz-placeholder { /* Firefox 18- */
-  color: #D0DFEE;  
+  color: #D0DFEE;
 }
 
 .container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
-  color: #D0DFEE;  
+  color: #D0DFEE;
 }
 
-.container-1 input#search:-ms-input-placeholder {  
-  color: #D0DFEE;  
+.container-1 input#search:-ms-input-placeholder {
+  color: #D0DFEE;
 }
 
 /* hacky solution for the position */
 .container-1 .icon{
   position: absolute;
   top: 50%;
-  margin-left: -290px;   
+  margin-left: -290px;
   margin-top: -10px;
   z-index: 1;
   color: #CFE6FA;
@@ -220,4 +220,8 @@ a {
 .officials-container {
   display: flex;
   justify-content: center;
+}
+
+.representatives-info {
+  border-bottom: 1px solid white
 }
