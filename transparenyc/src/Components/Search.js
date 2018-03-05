@@ -86,7 +86,7 @@ on the render - two new variables: results.length; one message to render both ke
                 <h2>Search Projects and Funds By Keyword</h2>
                 <h5>To search by keyword, please type in a word, and click the Search Button to see your results.</h5>
                 <input type='text' 
-                       placeholder='Enter keyword'
+                       placeholder='Search e.g. housing, education...'
                        value={keywordQueryInput} 
                        onInput={this.handleInput} /> {" "}
                 <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
