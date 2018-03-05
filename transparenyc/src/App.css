@@ -10,7 +10,7 @@ body,html{
 }
 
 .App-container {
-  background-color: black;
+  background-color: #003F91;
   width: 950px;
   margin: 0 auto;
   color: whitesmoke;
@@ -103,9 +103,9 @@ a {
 }
 
 #project {
-  background-color: darkblue;
+  background-color: #BFD7EA;
   text-align: left;
-  color: white;
+  color: #2E4057;
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
@@ -128,7 +128,7 @@ a {
 .container-1 input#search{
   width: 300px;
   height: 30px;
-  background: #2b303b;
+  background: #003F91;
   border: none;
   font-size: 10pt;
   float: left;
