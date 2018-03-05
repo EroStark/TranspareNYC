@@ -2,14 +2,15 @@ import React from "react";
 import {Route, Link, Switch} from "react-router-dom";
 import {Redirect} from "react-router";
 import axios from "axios";
-import "./App.css";
 import Categories from "./Components/Categories";
 import Search from "./Components/Search";
 import SearchBar from "./Components/SearchBar"
 import About from './Components/About';
 import Home from './Components/Home';
 import Contact from './Components/Contact';
-import Representatives from './Components/Representatives'
+import Representatives from './Components/Representatives';
+import Chart from 'chart.js';
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +18,7 @@ class App extends React.Component {
     this.state = {
       categories: [],
       searchInput: '',
+      totalFundingPerCategory: [],
       redirect: false
     };
   }
@@ -37,21 +39,57 @@ class App extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
+
+      // axios
+      //   .get("https://data.cityofnewyork.us/resource/9haj-uwpr.json?" + "$group=funding_category&$select=funding_category,SUM(payment_value)")
+      //   .then(response => {
+      //     this.setState({
+      //       totalFundingPerCategory: response.data
+      //     });
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
   }
 
   handleChange = e => {
     this.setState({searchInput: e.target.value, redirect: false});
   };
+
   handleSubmit = () => {
     const {searchInput} = this.state;
     this.setState({redirect: true});
     // return <Redirect to={`/search/${searchInput}`} />;
   };
 
+  // renderHomepage = () => {
+  //   const { totalFundingPerCategory } = this.state;
+  //   var fundingChart = new Chart(ctx, {
+  //     type: 'pie',
+  //     data: {
+  //       datasets: [{
+  //         data: [10, 20, 30]
+  //       }],
+
+  //       // These labels appear in the legend and in the tooltips when hovering different arcs
+  //       labels: [
+  //           'Red',
+  //           'Yellow',
+  //           'Blue'
+  //       ]
+  //     },
+  //     options: {}
+  //   });
+  //   return (
+  //     <div>hey
+  //       <Home />
+  //     </div>
+  //   );
+  // };
+
   render() {
     const {categories, searchInput, redirect} = this.state;
-    console.log("redirect", redirect);
-    console.log("state", this.state);
+
     return (
       <div className="App">
         <div className="header">
@@ -71,7 +109,7 @@ class App extends React.Component {
         <div className="App-container">
           <nav id="navBar">
             {categories.map((elem, index) => (
-              <Link to={`/category/${elem}`}>
+              <Link key={index} to={`/category/${elem}`}>
                 {/* <span id="NavLinks"> */}
                 {elem.replace("*", "")}
                 {/* </span> */}

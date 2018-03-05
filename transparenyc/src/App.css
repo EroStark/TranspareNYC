@@ -185,11 +185,15 @@ a {
 
 .container-1 .icon {
   position: absolute;
-  top: 50%;
+  top: 42%;
   margin-left: -290px;
   margin-top: -10px;
   z-index: 1;
   color: #CFE6FA;
+}
+
+.container-1 button {
+  margin-top: 0.5%;
 }
 
 /* transition color connects to container #search for animation */
@@ -258,13 +262,16 @@ a {
   #navBar {
     width: 700px;
   }
+  
   .App-container {
     width: 750px;
     min-height: 1366px;
   }
+
   .project-container {
     width: 600px;
   }
+
   .home-info {
     width: 650px;
   }

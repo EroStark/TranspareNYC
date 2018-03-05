@@ -27,7 +27,7 @@ class ProjectList extends React.Component {
       HRA: "Human Resources Administration",
       FPHNY: "Fund for Public Health NYC",
       ACS: "Administration for Children Services",
-      DOHMH: "Department of HEALTH AND MENTAL HYGIENE",
+      DOHMH: "Department of Health & Mental Hygiene",
       DYCD: "Department for Youth & Community Development",
       SBS: "Small Business Services",
       DCAS: "Department of Citywide Administrative Services",
