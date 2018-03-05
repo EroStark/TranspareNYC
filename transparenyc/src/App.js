@@ -50,8 +50,7 @@ class App extends React.Component {
 
   render() {
     const {categories, searchInput, redirect} = this.state;
-    console.log("redirect", redirect);
-    console.log("state", this.state);
+
     return (
       <div className="App">
         <div className="header">
@@ -71,7 +70,7 @@ class App extends React.Component {
         <div className="App-container">
           <nav id="navBar">
             {categories.map((elem, index) => (
-              <Link to={`/category/${elem}`}>
+              <Link key={index} to={`/category/${elem}`}>
                 {/* <span id="NavLinks"> */}
                 {elem.replace("*", "")}
                 {/* </span> */}
