@@ -63,7 +63,7 @@ class App extends React.Component {
             </Link>
             <SearchBar />
             <div className="headerSpace">
-              <Link to='/representatives'>Contact Reps</Link>
+              <Link to='/reps'>Contact Reps</Link>
               <Link to='/about'>About</Link>
             </div>
           </span>

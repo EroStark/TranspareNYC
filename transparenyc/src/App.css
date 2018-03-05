@@ -141,7 +141,7 @@ a {
 
  /* the color placeholder font in different brands */
 .container-1 input#search::-webkit-input-placeholder {
-  color: rgba(208, 223, 238, 0.79);
+  color: #D0DFEE;
 }
 
 .container-1 input#search:-moz-placeholder { /* Firefox 18- */
@@ -169,7 +169,7 @@ a {
 /* transition color connects to container #search for animation */
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
   outline: none;
-  background: #8F939C;
+  background: rgba(125, 132, 145, 0.74);;
 }
 
 .home-contact {
