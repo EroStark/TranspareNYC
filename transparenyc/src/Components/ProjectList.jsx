@@ -86,7 +86,7 @@ class ProjectList extends React.Component {
         <h4>Total Funds Awarded: {currencyFormatter.format(total, { code: 'USD' })}</h4>
         <div className="project-container">
           {projects.map((project, idx) =>
-            <div key={idx} id="project">
+            <div key={idx} id="project" draggable="true">
               <p>Project Name: {project.project_name}</p>
               <p>Payment Value: {currencyFormatter.format(Number(project.payment_value), { code: 'USD' })}</p>
               <p>{project.funding_source}</p>
