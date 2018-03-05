@@ -49,10 +49,10 @@ class Representatives extends React.Component{
     const { senators, representatives } = this.state
 
     return(
-      <div>
+      <div className="officials-container">
         <h1>New York State Senators and Representatives</h1>
         <h2>Senators</h2>
-        <div>
+        <div className="officials">
           {senators.map(senator =>(
             <div className='official-info'>
               <h3>{senator.name}</h3>
