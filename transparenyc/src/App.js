@@ -32,7 +32,7 @@ class App extends React.Component {
           .forEach(elem => {
             return categoriesArr.push(elem.funding_category);
           });
-        this.setState({categories: categoriesArr});
+        this.setState({categories: categoriesArr.sort()});
       })
       .catch(function (error) {
         console.log(error);
@@ -55,15 +55,18 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <Link to={`/`}>
-            <img
-              src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg"
-              alt="TranspNYC"/>
-          </Link>
-          <SearchBar/>
-          <div className="headerSpace">
-            <Link to='/about'>About</Link>
-          </div>
+          <span id="header-content">
+            <Link to={`/`}>
+              <img
+                src="https://files.slack.com/files-pri/T9J0HJJ2E-F9J8BD30D/download/logo-b-dark.svg"
+                alt="TranspNYC"/>
+            </Link>
+            <SearchBar />
+            <div className="headerSpace">
+              <Link to='/representatives'>Contact Reps</Link>
+              <Link to='/about'>About</Link>
+            </div>
+          </span>
         </div>
         <div className="App-container">
           <nav id="navBar">
@@ -83,9 +86,7 @@ class App extends React.Component {
             <Route path="/search/:search" component={Search} />
             <Route path='/reps' component={Representatives}/>
           </Switch>
-        <div id="footer-div">
-          <footer id="footer">Made with 💕 by Team TranspareNYC</footer>
-          </div>
+        <footer id="footer">Made with 💕 by Team TranspareNYC</footer>
         </div>
       </div>
     );

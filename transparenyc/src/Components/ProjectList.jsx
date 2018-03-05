@@ -1,39 +1,39 @@
-import React from 'react'
-import axios from 'axios'
-import currencyFormatter from 'currency-formatter'
-
+import React from 'react';
+import axios from 'axios';
+import currencyFormatter from 'currency-formatter';
  
 class ProjectList extends React.Component {
   constructor(props) {
     super(props);
+    
     this.agencyName = {
-      "OPS": "Office of Protection Services",
-      "DEP": "Department of Environmental Protection",
-      "DOITT": "Department of Information Technology & Telecommunications",
-      "DOT": "Department of Transportation",
-      "NYCHA": "New York City Housing Authority",
-      "DPR": "Department of Parks & Recreation",
-      "OMB": "Office of Management & Budget",
-      "HPD": "Housing Preservation & Development",
-      "MO": "Mayor's Office",
-      "DHS": "Department of Homeland Security",
-      "DOP": "Department of Probation",
-      "NYPD": "New York Police Department",
-      "FDNY": "New York City Fire Department",
-      "DOT": "Department of Transportation",
-      "OCME": "Office of Chief Medical Examiner",
-      "DOC": "Department of Correction",
-      "CJC": "Criminal Justice & Criminology",
-      "DFTA": "Department For The Aging",
-      "HRA": "Human Resources Administration",
-      "FPHNY": "Fund for Public Health NYC",
-      "ACS": "Administration for Children Services",
-      "DOHMH": "Department of HEALTH AND MENTAL HYGIENE",
-      "DYCD": "Department for Youth & Community Development",
-      "SBS": "Small Business Services",
-      "DCAS": "Department of Citywide Administrative Services",
-      "DOE": "Department Of Education"
-    },
+      OPS: "Office of Protection Services",
+      DEP: "Department of Environmental Protection",
+      DOITT: "Department of Information Technology & Telecommunications",
+      DOT: "Department of Transportation",
+      NYCHA: "New York City Housing Authority",
+      DPR: "Department of Parks & Recreation",
+      OMB: "Office of Management & Budget",
+      HPD: "Housing Preservation & Development",
+      MO: "Mayor's Office",
+      DHS: "Department of Homeland Security",
+      DOP: "Department of Probation",
+      NYPD: "New York Police Department",
+      FDNY: "New York City Fire Department",
+      OCME: "Office of Chief Medical Examiner",
+      DOC: "Department of Correction",
+      CJC: "Criminal Justice & Criminology",
+      DFTA: "Department For The Aging",
+      HRA: "Human Resources Administration",
+      FPHNY: "Fund for Public Health NYC",
+      ACS: "Administration for Children Services",
+      DOHMH: "Department of HEALTH AND MENTAL HYGIENE",
+      DYCD: "Department for Youth & Community Development",
+      SBS: "Small Business Services",
+      DCAS: "Department of Citywide Administrative Services",
+      DOE: "Department Of Education"
+    };
+
     this.state = {
       projects: [],
       agency: '',

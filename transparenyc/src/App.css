@@ -1,8 +1,3 @@
-body,html{
-  width: 100%;
-  height: 100%
-}
-
 .App {
   text-align: center;
   font-family: 'Oswald', sans-serif;
@@ -16,17 +11,6 @@ body,html{
   color: whitesmoke;
   min-height: 100vh;
   height: 100%;
-}
-
-#footer-div{
-  height: 50px;
-  display: inline-flex;
-  justify-content: center;
-}
-#footer{
-  display: inline-flex;
-  justify-content: flex-start;
-
 }
 
 #navBar {
@@ -46,7 +30,7 @@ body,html{
   background-color: whitesmoke;
   border-radius: 5px;
   height: 5em;
-  margin: 2px;
+  margin: 2.5px;
 }
 
 #navBar a:hover {
@@ -64,8 +48,18 @@ body,html{
   width: 100%;
 }
 
+#header-content {
+  width: 950px;
+  display: flex;
+  justify-content: space-between
+}
+
 .headerSpace {
   width: 20%;
+}
+
+.headerSpace a:hover {
+  color: #7D8491;
 }
 
 .searchBar {
@@ -84,7 +78,6 @@ a {
   display: flex;
   align-items: center;
 }
-
 
 .NavLinks:active {
   background-color:rgba(221, 144, 81, 0.99);
@@ -109,6 +102,7 @@ a {
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
+
 .blurb-team-contacts a {
   color: white;
 }
@@ -118,14 +112,14 @@ a {
 }
 /* search bar */
 
-.container-1{
+.container-1 {
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
 }
 
-.container-1 input#search{
+.container-1 input#search {
   width: 300px;
   height: 30px;
   background: #003F91;
@@ -174,28 +168,41 @@ a {
 
 /* transition color connects to container #search for animation */
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
-  outline:none;
+  outline: none;
   background: #8F939C;
 }
+
 .home-contact {
   display: inline-flex;
-border: white solid 1px;
-}
-.official-info {
   border: white solid 1px;
 }
+
+.official-info {
+  padding: 0.5em;
+  border: white solid 1px;
+}
+
 .home-contact a {
   color: white;
 }
+
 .official-info a {
   color: white;
 }
+
 .blurb-team-contacts a {
   color: white
 }
 
 .official-info a {
   color: whitesmoke;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+.official-info a:hover {
+  color: #7D8491;
+  text-transform: lowercase;
 }
 
 .home-contact {
