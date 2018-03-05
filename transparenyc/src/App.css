@@ -23,6 +23,9 @@
 }
 
 #navBar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   color: black;
   font-size: 14px;
