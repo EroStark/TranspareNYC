@@ -89,7 +89,7 @@ class ProjectList extends React.Component {
             <div key={idx} id="project" draggable="true">
               <p>Project Name: {project.project_name}</p>
               <p>Payment Value: {currencyFormatter.format(Number(project.payment_value), { code: 'USD' })}</p>
-              <p>{project.funding_source}</p>
+              <p>Funding Source: {project.funding_source}</p>
               <p>Description: {project.project_description}</p>
             </div>
           )}

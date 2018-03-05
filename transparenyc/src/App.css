@@ -113,6 +113,9 @@ a {
 .blurb-team-contacts a {
   color: white;
 }
+.contactSize {
+  font-size: 18px
+}
 
 .home-info {
   width: 850px;
@@ -218,7 +221,8 @@ a {
 }
 
 .blurb-team-contacts a {
-  color: white
+  color: white;
+  font-size: 16px;
 }
 
 .official-info a {

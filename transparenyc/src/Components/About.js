@@ -5,7 +5,6 @@ const About = props => {
         <div>
             <div className="blurb-team-contacts">
                 <h2>Team TranspareNYC</h2>
-
                 <p><b>Quality Assurance:</b> Cesarina Paula <span>
                     <a href="https://www.linkedin.com/in/cesarina-paula/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>{''}
 
@@ -29,7 +28,6 @@ const About = props => {
 
             </div>
             
-
         </div>
     )
 }
