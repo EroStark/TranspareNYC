@@ -66,7 +66,10 @@ class App extends React.Component {
             />
           </Link>
           <SearchBar />
-          <div className="headerSpace"><Link to='/about'>About</Link></div>
+          <div className="headerSpace">
+            <Link to='/representatives'>Contact Reps</Link>
+            <Link to='/about'>About</Link>
+          </div>
         </div>
         <div className="App-container">
           <nav id="navBar">
@@ -82,6 +85,7 @@ class App extends React.Component {
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
+            <Route path='/representatives' component={Contact} />
             <Route path="/category/:category" component={Categories} />
             <Route path="/search/:search" component={Search} />
           </Switch>

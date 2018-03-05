@@ -30,7 +30,7 @@
   background-color: whitesmoke;
   border-radius: 5px;
   height: 5em;
-  margin: 2px;
+  margin: 2.5px;
 }
 
 #navBar a:hover {
@@ -52,6 +52,9 @@
   width: 20%;
 }
 
+.headerSpace a:hover {
+  color: lightslategray;
+}
 .searchBar {
   border-radius: 35px;
 }
@@ -93,6 +96,7 @@ a {
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
+
 .blurb-team-contacts a {
   color: white;
 }
@@ -102,14 +106,14 @@ a {
 }
 /* search bar */
 
-.container-1{
+.container-1 {
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
 }
 
-.container-1 input#search{
+.container-1 input#search {
   width: 300px;
   height: 30px;
   background: #2b303b;
@@ -158,28 +162,41 @@ a {
 
 /* transition color connects to container #search for animation */
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
-  outline:none;
+  outline: none;
   background: #8F939C;
 }
+
 .home-contact {
   display: inline-flex;
-border: white solid 1px;
-}
-.official-info {
   border: white solid 1px;
 }
+
+.official-info {
+  padding: 0.5em;
+  border: white solid 1px;
+}
+
 .home-contact a {
   color: white;
 }
+
 .official-info a {
   color: white;
 }
+
 .blurb-team-contacts a {
   color: white
 }
 
 .official-info a {
   color: whitesmoke;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+.official-info a:hover {
+  color: lightgrey;
+  text-transform: lowercase;
 }
 
 .home-contact {

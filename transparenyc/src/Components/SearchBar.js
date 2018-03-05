@@ -21,9 +21,7 @@ class SearchBar extends React.Component {
   };
 
   handleSubmit = () => {
-      const location = this.props.location.pathname
-    
-    console.log('state' , this.state)
+    const location = this.props.location.pathname
     const { searchInput, inputQuery } = this.state;
     this.setState({
       redirect: true,
@@ -35,8 +33,6 @@ class SearchBar extends React.Component {
   render() {
     const { inputQuery, searchInput, redirect } = this.state;
     const location = this.props.location.pathname
-    console.log("search bar props", this.props.location.pathname);
-    console.log('redirect search bar',redirect)
     if (redirect) {
       return (
         <div>
@@ -46,18 +42,18 @@ class SearchBar extends React.Component {
             state: { redirect: false }
           }}
         />
-        <div class="box">
-            <div class="container-1">
-            <span class="icon"><i class="fa fa-search"></i></span>
+        <div className="box">
+            <div className="container-1">
+            <span className="icon"><i className="fa fa-search"></i></span>
                 <input
-                type="search"
-                id= "search"
-                onChange={this.handleChange}
-                placeholder="search"
-                className="searchBar"
-                value={inputQuery}
+                  type="search"
+                  id="search"
+                  onChange={this.handleChange}
+                  placeholder="search"
+                  className="searchBar"
+                  value={inputQuery}
                 />
-                <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
+                <button onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
             </div>
         </div>
       </div>
@@ -66,18 +62,18 @@ class SearchBar extends React.Component {
 
     return (
       <div>
-        <div class="box">
-          <div class="container-1">
-              <span class="icon"><i class="fa fa-search"></i></span>
+        <div className="box">
+          <div className="container-1">
+              <span className="icon"><i className="fa fa-search"></i></span>
               <input
-              type="search"
-              id= "search"
-              onChange={this.handleChange}
-              placeholder="search"
-              className="searchBar"
-              value={searchInput}
+                type="search"
+                id= "search"
+                onChange={this.handleChange}
+                placeholder="search"
+                className="searchBar"
+                value={searchInput}
               />
-              <button onClick={this.handleSubmit}><i class="fa fa-search"></i></button>
+              <button onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
           </div>
         </div>
       </div>
